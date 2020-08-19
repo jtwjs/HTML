@@ -1,0 +1,40 @@
+.parent {
+  display: flex;
+  align-content: stretch; /*default:stretch*/
+  /*justify-content와 같지만 line에 관한 것!(line 변경) */
+}
+
+.Child {
+  /*자식 element에서 조정가능한 flex 옵션*/
+  align-self: center; /*자식 align-items 버전*/
+  order: 0; /*order 순서 0,1,2... default:0*/
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: nowrap; /*default: no-wrap*/
+  /*nowrap: 무조건 같은줄에 위치시킴 = 자식 width값들이 변동됨*/
+  flex-wrap: wrap;
+  /*wrap: flexbox에게 child의 width 크기를 유지시킴 (한 줄 고정 X)*/
+}
+
+.flex-shrink {
+  /*childe에게 줄수있는 property*/
+  /*기본적으로 element의 행동을 정의*/
+  flex-shrink: 1; /*default:1*/
+  /*flex-wrap: nowrap일때 공간이 줄어들면 width가 줄어들 배율 지정*/
+  flex-shrink: n; /*다른 child보다 n배 줄어듦*/
+}
+
+.flex-grow {
+  /*childe에게 줄수있는 property*/
+  /*shrink와 반대 (얼마나 더 커질지)*/
+  flex-grow: 0; /*default:0*/
+  /*여분의 공간이 있을 때 flex-grow는 그 빈공간을 가지게됨*/
+}
+
+.flex-basis {
+  /*childe에게 줄수있는 property*/
+  /*너비가 늘어나거나 줄어들기 전 기본 width를 지정*/
+  /*main-axis 적용 (row => width, column => height)*/
+}

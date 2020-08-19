@@ -1,0 +1,55 @@
+.parent {
+  display: grid;
+  grid-template-columns: 20px 55px 89px 100px; /*column 너비를 지정 */
+  grid-template-rows: 50px; /*row의 너비를 지정*/
+  column-gap: 10px; /*column간에 차이(빈공간)의 너비를 지정*/
+  row-gap: 10px; /*row간에 차이(빈공간)의 너비를 지정*/
+}
+
+.repeat {
+  display: grid;
+  /*repeat attribute: repeat(갯수,size);*/
+  grid-template-columns: repeat(4, 200px);
+  /*auto: 가능한 만큼 모든 공간을 사용 그다음으로 200px*/
+  grid-template-columns: auto 200px;
+  grid-template-rows: repeat(4, 300px);
+}
+
+.grid-template-areas {
+  display: grid;
+  /*grid-area를 지정해주어야 사용 가능*/
+  /*layout 디자인 만드는 속성*/
+  grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
+}
+
+.header {
+  /*layout에 이름 지정*/
+  grid-area: header;
+}
+
+.nav {
+  /*layout에 이름 지정*/
+  grid-area: nav;
+}
+
+.content {
+  /*layout에 이름 지정*/
+  grid-area: content;
+}
+
+.footer {
+  /*layout에 이름 지정*/
+  grid-area: footer;
+}
+
+.start-end {
+  /*line을 지정*/
+  grid-column-start: 1; /*한 column에서 시작: 첫번째 줄(선)*/
+  grid-column-end: 2; /*한 column에서 끝: 두번째 줄(선)*/
+  grid-row-start: 2; /*두 번째 row에서 시작*/
+  grid-row-end: 3; /*세 번째 row까지 */
+}
