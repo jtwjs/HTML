@@ -52,4 +52,28 @@
   grid-column-end: 2; /*한 column에서 끝: 두번째 줄(선)*/
   grid-row-start: 2; /*두 번째 row에서 시작*/
   grid-row-end: 3; /*세 번째 row까지 */
+
+  grid-column: 1 / 4; /*start:1, end:4*/
+  grid-row: 1 / 4; /*start:1, end:4*/
+  /*마지막 끝부분 : -1*/
+  grid-column: 1 / -2; /*끝에서 2번째*/
+  /*span: cell의 개수*/
+  grid-column: span 4; /*cell 4칸 차지*/
+  grid-row: 2 / span 2; /*시작지점2부터 해서 cell 2칸차지*/
+}
+
+.fraction {
+  /*fraction: grid container에서 사용 가능한 공간*/
+  grid-template-columns: repeat(4, 1fr); /*공간을 가질수 있는만큼 가짐*/
+  grid-template-columns: 4fr 1fr 1fr 1fr; /*비율*/
+}
+
+.grid-template {
+  /*grid-template에서는 grid-area 사용*/
+  display: grid;
+  grid-template:
+    "header header header header" 1fr
+    "content content content nav" 2fr
+    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
+  /*grid-template에서 repeat는 적용X*/
 }
