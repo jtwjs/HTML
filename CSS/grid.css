@@ -1,5 +1,6 @@
 .parent {
   display: grid;
+  /*grid에서 무조건 row: 수평 column: 수직*/
   grid-template-columns: 20px 55px 89px 100px; /*column 너비를 지정 */
   grid-template-rows: 50px; /*row의 너비를 지정*/
   column-gap: 10px; /*column간에 차이(빈공간)의 너비를 지정*/
@@ -76,4 +77,70 @@
     "content content content nav" 2fr
     "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
   /*grid-template에서 repeat는 적용X*/
+}
+
+.place-items {
+  display: grid;
+  /*stretch: 너비를 100% 늘림*/
+  justify-items: stretch; /*수평 default:stretch*/
+  align-items: stretch; /*수직 default:stretch*/
+  /*place-items: 수직(align) 수평(justify)*/
+  place-items: stretch center;
+
+  /*content vs items 차이 
+  content: grid 전체를 의미
+  item: 각 cell을 의미*/
+  place-content: end center; /*grid 전체 정렬 (수직 수평)*/
+}
+
+.child2 {
+  justify-self: stretch; /*자식전용 property*/
+  align-self: stretch; /*child의 개별 속성*/
+  place-self: stretch stretch;
+}
+
+.auto {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+
+  /*설정해놓은 grid보다 더 많은 content가 들어올시 자동 설정*/
+  grid-auto-columns: 100px;
+  grid-auto-rows: 100px;
+
+  /*row의 수보다 더많은 element가 있을시 더 많은 row를 만들어내기보다 더많은 column을 생성*/
+  grid-auto-flow: column; /*default:row*/
+}
+
+.minmax {
+  /*element의 크기의 최소너비 최대너비 지정*/
+  display: grid;
+  /*최소너비 100px, 최대너비 1fr*/
+  grid-template-columns: repeat(10, minmax(100px, 1fr));
+}
+
+.auto-fit {
+  /*repeat function에만 사용*/
+  display: grid;
+  /*현재의 element를 쭉 늘려서 row에 딱 맞게 해줌(fit)
+  빈 공간없이 채운다. 유동적인 사이즈를 위함*/
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.auto-fill {
+  /*repeat function에만 사용*/
+  display: grid;
+  /*특정 숫자를 적어주기 보다 auto-fill을 이용해 우리가 준 사이즈 안에서
+  가능한 한 많은 column을 생성(채움) 빈공간 생성
+  보다 정확한 사이즈를 위함*/
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.min-content,
+.max-content {
+  display: grid;
+  /*max-content: 크기의 최대너비로 크기 지정(box를 컨텐츠에 필요한만큼 커짐)
+    min-content: 크기의 최소너비로 크기 지정(box를 컨텐츠가 작아질수있는만큼 작아짐)*/
+
+  grid-template-columns: max-content min-content;
 }
