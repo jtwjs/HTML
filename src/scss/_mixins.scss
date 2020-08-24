@@ -1,0 +1,12 @@
+@mixin agreeBtn($image) {
+  width: 25px;
+  height: 20px;
+  border: none;
+  background-color: inherit;
+  background-image: url(../../assets/#{$image}.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  @content;
+}

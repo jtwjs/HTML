@@ -1,0 +1,108 @@
+@import "_variables";
+@import "_mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  height: 100vh;
+  padding: 80px 155px 30px 70px;
+  color: $redColor;
+  background-color: $bgWhiteColor;
+  h1 {
+    font-size: 75px;
+  }
+
+  dt {
+    margin-bottom: 23px;
+    padding-right: 10px;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  dd {
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: -0.001em;
+    text-align: justify;
+  }
+}
+
+main {
+  margin-left: 40%;
+  color: $whiteColor;
+
+  section {
+    width: 100%;
+    height: 100vh;
+    padding: 72px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 2%, transparent, transparent, transparent, transparent) $bgRedColor;
+    .movie_info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      margin-bottom: 20px;
+      .info-title {
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+      .info-director {
+        font-weight: 600;
+      }
+    }
+    .movie_player {
+      margin-bottom: 20px;
+      box-shadow: 0 80px 80px -80px #000;
+      img {
+        display: block;
+        width: 100%;
+        height: 435px;
+        cursor: pointer;
+      }
+    }
+    .movie_agree {
+      display: flex;
+      justify-content: flex-end;
+
+      &::before {
+        margin-right: 10px;
+        content: "Do you agree?";
+      }
+      dt {
+        margin-bottom: 5px;
+      }
+      #agreeBtn {
+        @include agreeBtn(agree);
+        margin-right: 5px;
+      }
+      #notAgreeBtn {
+        @include agreeBtn(notAgree);
+      }
+      dd {
+        font-size: 14px;
+        text-align: center;
+        opacity: 0.8;
+      }
+    }
+  }
+}
