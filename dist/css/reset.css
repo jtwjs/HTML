@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -108,4 +112,24 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+a,
+button {
+  all: unset;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  visibility: hidden;
 }

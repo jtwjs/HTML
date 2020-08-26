@@ -10,3 +10,10 @@
   cursor: pointer;
   @content;
 }
+
+@mixin category_title() {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  @content;
+}
