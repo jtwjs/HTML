@@ -1,0 +1,20 @@
+
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <polygon id="path-1" points="0 6.78571429e-05 19 6.78571429e-05 19 19 0 19"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CTA-secondary" transform="translate(-2.000000, -2.000000)">
+            <g id="Group-6-Copy" transform="translate(11.500000, 11.500000) scale(-1, 1) rotate(-180.000000) translate(-11.500000, -11.500000) translate(2.000000, 2.000000)">
+                <g id="Group-3" transform="translate(0.000000, -0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M19,9.50006786 C19,14.7467821 14.7467143,19.0000679 9.5,19.0000679 C4.25328571,19.0000679 0,14.7467821 0,9.50006786 C0,4.25335357 4.25328571,6.78571429e-05 9.5,6.78571429e-05 C14.7467143,6.78571429e-05 19,4.25335357 19,9.50006786" id="Fill-1" fill="#212020" mask="url(#mask-2)"></path>
+                </g>
+                <polygon id="Fill-4" fill="#FFFFFF" points="4 10.7903459 4 9.22189173 12.0153052 9.22189173 9.63129055 7.04087703 10.9171758 6 15 9.99354126 10.9171758 14 9.61812685 12.9224101 12.0153052 10.7903459"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
