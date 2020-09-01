@@ -1,0 +1,103 @@
+@import "_variables";
+
+body {
+  padding: 0 40px;
+  font-family: $Lora;
+  background-color: $linen;
+}
+
+.header {
+  margin: 40px 0 160px 0;
+  .header--title {
+    font-size: 44px;
+    line-height: 1.2;
+  }
+}
+main {
+  .project {
+    margin-bottom: 80px;
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(11, 60px);
+      li {
+        display: grid;
+        grid-template-columns: 10% 35% 50% 5%;
+        grid-template-rows: 1fr;
+        height: 100%;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        &:not(:first-child) {
+          cursor: pointer;
+          &:hover {
+            font-family: $oldTT;
+            font-size: 22px;
+            font-style: italic;
+            letter-spacing: -0.05em;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #000;
+        }
+        &:first-child {
+          font-size: 13px;
+          color: $salmon;
+          letter-spacing: 0;
+        }
+      }
+      div {
+        align-self: flex-end;
+        padding-bottom: 10px;
+      }
+      .projectIcon {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        background-image: url(../../assets/show.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px 30px;
+        &.lock {
+          background-image: url(../../assets/show_locked.svg);
+        }
+      }
+    }
+  }
+  .education {
+    margin-bottom: 110px;
+    p {
+      font-size: 28px;
+      line-height: 1.6;
+      .prefix {
+        font-size: 13px;
+        font-weight: 600;
+        color: $salmon;
+      }
+    }
+  }
+  .about {
+    margin-bottom: 80px;
+
+    p {
+      font-size: 28px;
+      line-height: 1.6;
+
+      .prefix {
+        font-size: 13px;
+        font-weight: 600;
+        color: $salmon;
+      }
+      strong {
+        font-size: 30px;
+        text-decoration: underline;
+        color: $darkSalmon;
+        cursor: pointer;
+        &:hover {
+          font-family: $oldTT;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
