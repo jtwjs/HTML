@@ -58,3 +58,25 @@
     }
   }
 }
+
+@mixin dashedBorder($state: play) {
+  @if $state == "play" {
+    background-image: linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0),
+      linear-gradient(90deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 5%, 0 95%, 0 100%;
+    background-repeat: repeat-x;
+    background-size: 30px 1px;
+    animation: 0.8s linear infinite normal border2;
+  } @else {
+    background-image: linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0),
+      linear-gradient(180deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+    animation: 0.4s linear infinite normal border;
+    animation-play-state: paused;
+    &:hover {
+      animation-play-state: running;
+    }
+  }
+}
