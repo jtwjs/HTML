@@ -29,9 +29,9 @@ function init() {
     if (scrollLocation < 120 && scrollLocation > 60) {
       var st1 = scrollLocation;
     }
-    if (primaryMenuBar.offsetTop <= 0) {
+    if (scrollLocation >= 105) {
       primaryMenuBar.style.top = 0 + "px";
-    } else if (primaryMenuBar.offsetTop >= 120) {
+    } else if (scrollLocation < 45) {
       primaryMenuBar.style.top = 60 + "px";
     } else {
       primaryMenuBar.style.top = headerHeight - st1 + "px";

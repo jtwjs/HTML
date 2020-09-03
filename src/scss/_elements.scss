@@ -195,16 +195,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: 9s linear infinite move;
+    animation: 9s linear infinite ticker;
     span {
       display: block;
       width: max-content;
-      &:not(:last-child) {
-        padding-right: 70px;
-      }
-    }
-    &:first-child {
-      margin-right: 70px;
+      padding-right: 70px;
     }
   }
 }
