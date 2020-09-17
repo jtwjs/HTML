@@ -1,0 +1,341 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5vh auto 5vh;
+  grid-template-rows: 5vh auto 5vh;
+  width: 100%;
+  height: 100vh;
+  text-transform: uppercase;
+}
+
+.ticker-container {
+  position: relative;
+  grid-column: span 3;
+  width: 100%;
+  height: 5vh;
+  border: 5px solid #ee7149;
+  background-color: #fff;
+}
+
+.ticker--wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ticker--inner {
+  display: flex;
+  animation: ticker 12s linear infinite;
+  width: max-content;
+  height: 100%;
+}
+
+.ticker {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin-right: 100px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ee7149;
+}
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+  border-left: 5px solid #ee7149;
+  border-right: 5px solid #ee7149;
+}
+
+.sidebar.left {
+  display: grid;
+  grid-template-rows: 6fr 3fr 1fr;
+  font-style: italic;
+  font-weight: 600;
+  color: #ee7149;
+  background-color: #fff;
+}
+
+.sidebar--menu-wrap {
+  width: 100%;
+  color: #fff;
+  background-color: #ee7149;
+  overflow: hidden;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px 5px;
+  word-break: break-all;
+}
+
+.menu-list-item {
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-list-item:hover > a {
+  color: #000;
+}
+
+.menu-list-item:not(:last-child) {
+  position: relative;
+}
+
+.menu-list-item:not(:last-child)::after {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "⁕";
+}
+
+.menu-list-item > a {
+  display: flex;
+  letter-spacing: 1em;
+  text-align: center;
+}
+
+.sidebar--news-letter {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+}
+
+.sidebar--news-letter::after {
+  position: absolute;
+  bottom: 7px;
+  width: 11px;
+  height: 28px;
+  background-image: url(assets/spicy.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(180deg);
+  content: "";
+}
+
+.sidebar--sns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 5px solid #ee7149;
+  padding: 5px 0;
+}
+
+.sidebar--sns > a {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.facebook {
+  background-image: url(assets/facebook-logo.png);
+}
+
+.insta {
+  background-image: url(assets/insta-logo.png);
+}
+
+.sidebar.right {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.sidebar--order,
+.sidebar--reservation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 7px;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  background-color: #46ab4f;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.3s linear;
+}
+
+.sidebar--order::before,
+.sidebar--order::after {
+  position: absolute;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  font-style: normal;
+  content: "🤍";
+}
+
+.sidebar--order:hover,
+.sidebar--reservation:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar--order:hover::before,
+.sidebar--order:hover::after {
+  content: "🖤";
+}
+
+.sidebar--order::before {
+  top: 35px;
+}
+
+.sidebar--order::after {
+  bottom: 35px;
+}
+
+.sidebar--reservation::before,
+.sidebar--reservation::after {
+  position: absolute;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  font-style: normal;
+  content: "😄";
+}
+
+.sidebar--reservation::before {
+  top: 35px;
+}
+.sidebar--reservation::after {
+  bottom: 35px;
+}
+
+.sidebar--reservation:hover::before,
+.sidebar--reservation:hover::after {
+  content: "😆";
+}
+
+.sidebar--order span,
+.sidebar--reservation span {
+  display: flex;
+  word-break: break-all;
+  letter-spacing: 1em;
+  text-align: center;
+}
+.sidebar--order > span:first-child {
+  margin-bottom: 15px;
+}
+
+.sidebar--order > span:last-child {
+  position: relative;
+  line-height: 2;
+}
+
+.sidebar--order > span:last-child::after {
+  position: absolute;
+  top: 32px;
+  left: -1px;
+  width: 12px;
+  height: 2px;
+  background-color: #fff;
+  content: "";
+  transition: background 0.3s linear;
+}
+
+.sidebar--order:hover > span:last-child::after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar--order {
+  border-bottom: 5px solid #ee7149;
+}
+
+.main-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.banner-photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-photo:nth-child(1) {
+  background-image: url(assets/ottogi.jpg);
+}
+.banner-photo:nth-child(2) {
+  background-image: url(assets/ottogi-curry.jpg);
+}
+
+.banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.banner-title > h2 {
+  margin-top: 20px;
+  font-size: 100px;
+  font-weight: 900;
+}
+
+.enter {
+  display: block;
+}
+
+.kakao {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-image: url(assets/kakao.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  cursor: pointer;
+}
