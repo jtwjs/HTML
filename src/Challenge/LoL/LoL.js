@@ -3,6 +3,7 @@ const champList = document.querySelector(".champions-list");
 let selectedChamp;
 
 function changeChampImg(elm) {
+  elm = elm.toLowerCase();
   const baundary = document.querySelector(".baundary");
   const profile = document.querySelector(".champion--profile");
   baundary.style.backgroundImage = `url(assets/${elm}skin.jpg)`;
