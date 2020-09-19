@@ -115,6 +115,24 @@ main {
   background-color: #e26fa4;
 }
 
+.champion.activate {
+  border: 4px solid #e26fa4;
+  color: #e26fa4;
+  z-index: 2;
+}
+
+.champion.activate > div:nth-child(-n + 2) {
+  border-right: 4px solid #e26fa4;
+}
+
+.champion.activate .champion--nickname {
+  border-bottom: 4px solid #e26fa4;
+}
+
+.champion.activate .more > button {
+  color: #fff;
+  background-color: #e26fa4;
+}
 /*##buandary*/
 
 .baundary--wrap {
@@ -131,48 +149,22 @@ main {
   transition: width 1s linear;
 }
 
-.baundary--wrap--wrap.activate {
-  width: 100%;
-  z-index: 2;
-  transition: width 1s linear, z-index 0s 0.5s;
-}
-
 .baundary {
   position: relative;
   display: flex;
   flex-direction: column;
-
+  background-image: url(assets/yasuoskin.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 100%;
-}
-
-.baundary--top {
-  position: absolute;
-  top: 0%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-image: url(assets/SB_Ahri.jpg);
-  background-position: -700px -0;
-  background-size: 1500px 700px;
-
-  background-repeat: no-repeat;
-}
-
-.baundary--bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-image: url(assets/SB_Riven.jpg);
-  background-position: -598px -40px;
-  background-size: 1300px 700px;
-  background-repeat: no-repeat;
+  opacity: 1;
+  transition: all 1.5s;
 }
 
 .spirit-blossom-mark {
   position: absolute;
-  top: 45%;
+  bottom: 1%;
   width: 70px;
   height: 70px;
   background-image: url(assets/blossom.png);
@@ -223,8 +215,9 @@ main {
 }
 
 .additional-info--nav > ul > li:hover {
-  opacity: 0.8;
+  color: #e26fa4;
 }
+
 .story {
   position: relative;
   padding-right: 10px;
@@ -243,6 +236,40 @@ main {
   content: "";
 }
 
+.story--drop-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  max-height: 0px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: right;
+  background-color: rgba(189, 36, 66, 0.6);
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 1s, opacity 0s 0.7s, visibility 0s 1s;
+}
+
+.story--drop-menu.activate {
+  max-height: 210px;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height 1s;
+}
+
+.drop-item > a {
+  display: block;
+  padding: 5px 15px 5px 5px;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.drop-item:hover {
+  color: #f9ee75;
+}
+
 .additional-info--nav > ul > li > a {
   display: flex;
   align-items: center;
@@ -258,7 +285,7 @@ main {
   height: 40px;
   margin-right: 5px;
   border-radius: 50%;
-  background-image: url(assets/yas.png);
+  background-image: url(assets/yasuo.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -306,4 +333,12 @@ main {
   color: #333;
   background-color: rgba(255, 255, 255, 0.3);
   overflow-y: scroll;
+}
+
+.round {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
 }
