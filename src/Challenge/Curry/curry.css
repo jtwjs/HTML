@@ -55,9 +55,9 @@ main {
 
 .ticker--inner {
   display: flex;
-  animation: ticker 12s linear infinite;
   width: max-content;
   height: 100%;
+  animation: ticker 12s linear infinite;
 }
 
 .ticker {
